@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Indicator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+
+    <div class="loading-container" id="loadingContainer">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Healing...</p>
+        </div>
+    </div>
+    <section class="section-1">
+        <div data-collapse-"medium" data-animation-"default" data-duration="400" data-easing-"ease" data-easing2-"ease" role="banner" class-"navigation w-nav">
+            <div class="text-block">HealFinder</div>
+            <div class="text-block-2">Your Companion to Nearby Hospitals</div>
+    
+        </div>
+        
+        <div class="popup">
+            <a href="../doc_reg"><img src="{% static 'img/Button_doc.png' %}" alt="" class="adddoc" ></a>
+            <a href="../" title="Back To Profile"><img src="{% static 'img/Button_back.png' %}" alt="" class="back-hs" ></a>
+            <a href="../logout"><img src="{% static 'img/Button_logout.png' %}" alt="" class="logout-hs" ></a>
+            <a href="../" title="Home"><img src="{% static 'img/Home.png' %}" alt="" class="home-hs" ></a>
+            
+           
+        </div>
+    </section>
+
+<div class="container-table-main">
+    <h2>Docter list</h2>
+    <div class="container-table">
+        <!-- Table Header -->
+        <div class="row header">
+            <div class="cell">Doctor Name</div>
+            <div class="cell">Department</div>
+            <div class="cell">Experience</div>
+            <div class="cell">Contact Number</div>
+            <div class="cell">Email</div>
+            <div class="cell">Time</div>
+        </div>
+    
+        <!-- Table Rows -->
+        {% for i in data %}
+        <div class="row">
+            <label class="cell">{{ i.name }}</label>
+            <label class="cell">{{ i.dpt }}</label>
+            <label class="cell">{{ i.exp }}</label>
+            <label class="cell">{{ i.cno_no }}</label>
+            <label class="cell">{{ i.email }}</label>
+            <label class="cell">{{ i.st_time }}-{{ i.end_time }}</label>
+        </div>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    
+    </div>
+    
+    
+</div>  
+
+<div class="container-table-main">
+    <h2>Pateint list</h2>
+    <div class="container-table">
+        <!-- Table Header -->
+        <div class="row header">
+            <div class="cell">Name</div>
+            <div class="cell">Phone</div>
+            <div class="cell">Age</div>
+            <div class="cell">date</div>
+            <div class="cell">Location</div>
+            <div class="cell">Time</div>
+        </div>
+    
+        <!-- Table Rows -->
+        {% for i in patdetail %}
+        <div class="row">
+            <label class="cell">{{ i.name }}</label>
+            <label class="cell">{{ i.phone }}</label>
+            <label class="cell">{{ i.age }}</label>
+            <label class="cell">{{ i.date }}</label>
+            <label class="cell">{{ i.location }}</label>
+            <label class="cell">{{ i.pat_time }}</label>
+        </div>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    
+    </div>
+    
+    
+</div>
+<section class="section-4">
+    <div class="follow"> <h1>Follow Us</h1></div>
+    <div class="social-image"><img src="{% static 'img/Social_Icons.png' %}" alt="" ></div>
+    <div class="text-block-5">© 2024 HealFinder.com</div>
+
+ </section> 
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

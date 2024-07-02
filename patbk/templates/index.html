@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Indicator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+
+<!-- Loading container -->
+<div class="loading-container" id="loadingContainer">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <p>Healing...</p>
+    </div>
+</div>
+
+<section class="section-1">
+    <div data-collapse-"medium" data-animation-"default" data-duration="400" data-easing-"ease" data-easing2-"ease" role="banner" class-"navigation w-nav">
+        <div class="text-block">HealFinder</div>
+        <div class="text-block-2">Your Companion to Nearby Hospitals</div>
+
+    </div>
+    
+    <div class="popup">
+        <a href="../" title="Back To Profile"><img src="{% static 'img/Button_back.png' %}" alt="" class="back" ></a>
+        <a href="../" title="Home"><img src="{% static 'img/Home.png' %}" alt="" class="home" ></a>
+     
+    </div>
+</section>
+<section class="section-1">    
+</div>
+{% if msg %}
+    <div class="small-container">
+        {{msg}}
+    </div>
+{% endif %}
+    <div class="container-main">
+        <div class="container">
+            <h2>Book an Appointment</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="patientName">Your Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+                
+                <label for="patientName">Your age:</label>
+                <input type="text" id="patientContact" name="patientAge" required>
+
+                <label for="patientName">Your Contact Number:</label>
+                <input type="text" id="patientContact" name="patientContact" required>
+
+                <label for="appointmentDate">Preferred Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+
+                <label for="appointmentDate">Preferred Time:</label>
+                <input type="time" id="apptime" name="apptime" required>
+
+                <label for="department" align="center">Reason For Visit</label></br>
+                <textarea id="message" name="message" rows="6" cols="80" required></textarea><br><br>
+
+                <label for="department" align="center">location</label></br>
+                <input type="text" id="location" name="patloc"  required></inpu><br><br>
+                
+                <button for="Booking" type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="section-5">
+    <div class="follow"> <h1>Follow Us</h1></div>
+    <div class="social-image"><img src="{% static 'img/Social_Icons.png' %}" alt="" ></div>
+    <div class="text-block-5">© 2024 HealFinder.com</div>
+
+ </section>
+
+
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+{% comment %} required --- is used to make that input box required that cannot make a ove without filling that fild {% endcomment %}

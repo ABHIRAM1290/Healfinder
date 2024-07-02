@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Indicator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+
+<!-- Loading container -->
+<div class="loading-container" id="loadingContainer">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <p>Healing...</p>
+    </div>
+</div>
+<section class="section-1">
+    <div data-collapse-"medium" data-animation-"default" data-duration="400" data-easing-"ease" data-easing2-"ease" role="banner" class-"navigation w-nav">
+        <div class="text-block">HealFinder</div>
+        <div class="text-block-2">Your Companion to Nearby Hospitals</div>
+
+    </div>
+
+    <div class="popup">
+        <a href="../" title="Back To Profile"><img src="{% static 'img/Button_back.png' %}" alt="" class="back" ></a>
+        <a href="../" title="Home"><img src="{% static 'img/Home.png' %}" alt="" class="home" ></a>
+        
+    </div>
+</section>
+<div class="container-main">
+    <div class="container">
+        <h2>Your Appointment</h2>
+        <h3>name:{{data.name}}</h3>
+        <h3>phone:{{data.phone}}</h3>
+        <h3>department:{{data.reson}}</h3>
+        <h3>time and date:{{data.date}}</h3>
+        {% if data.visit_hos != ' ' %}
+        <h3>hospital:{{data.visit_hos}}</h3>
+        <h3>docter name:{{data.visit_doc}}</h3>
+        {% endif %}
+    </div>
+    {% if data.visit_hos == ' ' %}
+    <div class="container">
+    <h3>hospital:{{pri_hos}}</h3>
+        {% for k in pri_docs %}
+            <h5>docter name:{{k}}</h5>
+            <form action="confrm" method="post" >
+                {% csrf_token %}
+                <input type="hidden" value="{{data.name}}" name="name">
+                <input type="hidden" value="{{pri_hos}}" name="hos">
+                <button type="submit" value={{k}} name="doc">Book Appointment</button>
+            </form>
+        {% endfor %}
+        
+    </div>
+    <div class="container">
+        <h3>hospital:{{sec_hos}}</h3>
+        {% for k in sec_docs %}
+            <h5>docter name:{{k}}</h5>
+            <form action="confrm" method="post" >
+                {% csrf_token %}
+                <input type="hidden" value="{{data.name}}" name="name">
+                <input type="hidden" value="{{sec_hos}}" name="hos">
+                <button type="submit" value={{k}} name="doc">Book Appointment</button>
+            </form>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<section class="section-4">
+    <div class="follow"> <h1>Follow Us</h1></div>
+    <div class="social-image"><img src="{% static 'img/Social_Icons.png' %}" alt="" ></div>
+    <div class="text-block-5">© 2024 HealFinder.com</div>
+
+ </section>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+{% comment %} required --- is used to make that input box required that cannot make a ove without filling that fild {% endcomment %}

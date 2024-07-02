@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Indicator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body for="logreg">
+
+<!-- Loading container -->
+<div class="loading-container" id="loadingContainer">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <p>Healing...</p>
+    </div>
+</div>
+<section class="section-1">
+    <div data-collapse-"medium" data-animation-"default" data-duration="400" data-easing-"ease" data-easing2-"ease" role="banner" class-"navigation w-nav">
+        <div class="text-block">HealFinder</div>
+        <div class="text-block-2">Your Companion to Nearby Hospitals</div>
+
+    </div>
+
+    <div class="popup">
+        <a href="../hs_login" title="Back To Profile"><img src="{% static 'img/Button_back.png' %}" alt="" class="back" ></a>
+        <a href="../" title="Home"><img src="{% static 'img/Home.png' %}" alt="" class="home" ></a>
+        
+    </div>
+</section>
+<div class="container-main">
+    <div class="container">
+        <h2>Enter Docter Details</h2>
+        <form action="doc_reg" method="post" enctype='multipart/form-data' class="form">
+            {% csrf_token %}
+            <label for="Hospital">Docter Name:</label>
+            <input type="text" id="docter" name="doc_name" required>
+            
+            <label for="Hospital">Experience :</label>
+            <input type="text" id="exp" name="doc_exp" required>
+            
+            <label for="Hospital">Enter Contact Number:</label>
+            <input type="number" id="doc_cno" name="doc_con" required>
+            
+            <label for="Hospital">Department:</label>
+            <input type="text" id="doc_dpt" name="doc_dpt" required>
+
+            <label for="Hospital">Email id:</label>
+            <input type="email" id="doc_email" name="doc_email" required>
+
+            <label for="Hospital_sttime">Start Time:</label>
+            <input type="time" id="time" name="st_time" required>
+            
+            <label for="Hospital_edtime">End Time:</label>
+            <input type="time" id="time" name="end_time" required></br>
+
+            <label for="Days">Week Days Available:</label>
+            {% comment %} <input type="text" id="days" name="avl_days" required> {% endcomment %}
+        <div class="checkbox">
+            <label for="monday">Mon:</label>
+            <input type="checkbox" id="monday" name="days" value="1">
+
+            <label for="tuesday">Tue:</label>
+            <input type="checkbox" id="tuesday" name="days" value="2">
+
+            <label for="wednesday">Wed:</label>
+            <input type="checkbox" id="wednesday" name="days" value="3">
+
+            <label for="thursday">Thu:</label>
+            <input type="checkbox" id="thursday" name="days" value="4">
+
+            <label for="friday">Fri:</label>
+            <input type="checkbox" id="friday" name="days" value="5">
+
+            <label for="saturday">Sat:</label>
+            <input type="checkbox" id="saturday" name="days" value="6">
+
+            <label for="sunday">Sun:</label>
+            <input type="checkbox" id="sunday" name="days" value="7">
+        </div>
+        </br>
+
+
+            <label for="Hospital" align="center">Image Of Docter</label></br>
+            <input type="file" name="doc_img">
+            <button for="login" type="submit">Book Now</button>
+        </form>
+    </div>
+</div>
+
+<section class="section-4">
+    <div class="follow"> <h1>Follow Us</h1></div>
+    <div class="social-image"><img src="{% static 'img/Social_Icons.png' %}" alt="" ></div>
+    <div class="text-block-5">© 2024 HealFinder.com</div>
+
+ </section>
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+{% comment %} required --- is used to make that input box required that cannot make a ove without filling that fild {% endcomment %} 

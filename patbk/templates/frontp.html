@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Indicator</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body for="index">
+    <div class="loading-container" id="loadingContainer">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Healing...</p>
+        </div>
+    </div>
+    <section class="section-1">
+      <div data-collapse-"medium" data-animation-"default" data-duration="400" data-easing-"ease" data-easing2-"ease" role="banner" class-"navigation w-nav">
+      <div class="text-block">HealFinder</div>
+      <div class="text-block-2">Your Companion to Nearby Hospitals</div>
+      <div class="popup">
+          <img src="{% static 'img/Menu_icon.png' %}" alt="" class="menuimg" >
+          <div class="popup-content">
+            <a href="../hs_login">Hospital login</a>
+            <a href="../hs_reg">Hospital Registration</a>
+            <a href="../admin">System Login</a>
+          </div>
+        </div>
+    </section>
+        <div class="heading-jumbo">Take an Appoinment Now!</div>
+        <a href="../patientreg"><button for="patient">Book Now</button></a>
+        <div class="img"><img src="{% static 'img/handwithphoneblackwhite.png' %}" alt="" class="image"></div>
+        {% comment %} <a href=""><button for="hslogin">Hospital Login</button></a> {% endcomment %}
+       {% comment %} <div class="buttonfun"> <a href=""><button for="hsreg">Hospital Register</button></a>
+        <a href=""><button for="hsadmin">Admin</button></a>
+      </div> {% endcomment %}
+    </div>
+    <section class="section-4">
+       <div class="follow"> <h1>Follow Us</h1></div>
+       <div class="social-image"><img src="{% static 'img/Social_Icons.png' %}" alt="" ></div>
+       <div class="text-block-5">© 2024 HealFinder.com</div>
+ 
+    </section>
+    
+    
+    </body>
+<script src="{% static 'js/main.js' %}"></script>
