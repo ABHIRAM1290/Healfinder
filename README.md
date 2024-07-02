@@ -1,0 +1,4 @@
+Location Data Management: Django manages user-entered locations, while Python computes longitude and latitude for precise storage.
+Distance Calculation and Hospital Selection: Python's Haversine formula determines user-hospital distance, filtering hospitals by user ratings for personalized recommendations. 
+User Interaction and Ration System: The app enables user location input, hospital rating, and ration provision, with backend logic facilitating seamless feedback and distribution.
+In HEALFINDER, users get precise hospital suggestions with seamless location input, personalized recommendations via dynamic filtering, easy appointment scheduling, and hospital rating through an interactive interface developed using HTML, CSS, and JavaScript, along with efficient ration distribution to support needy hospitals.
